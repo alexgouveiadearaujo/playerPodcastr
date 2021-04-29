@@ -1,0 +1,85 @@
+.episode{
+    max-width: 45rem; //720 /16
+    padding: 3rem 2rem;
+    margin: 0 auto;
+
+    .thumbnailContainer{
+        position: relative;
+
+        img{
+            border-radius: 1rem;
+        }
+
+        button{
+            border-radius: .75rem;
+            border: 0;
+            font-size: 0;
+            position: absolute;
+            width: 3rem;
+            height: 3rem;
+            z-index: 1;
+            transition: .2s filter;
+
+            &:first-child{
+                background: var(--purple-500);
+                left: 0;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+            &:last-child{
+                background: var(--green-500);
+                right: 0;
+                top: 50%;
+                transform: translate(50%,-50%);
+            }
+
+            &:hover{
+                filter: brightness(0.95);
+            }
+
+            
+        }
+    }
+    
+    header{
+        border-bottom: 1px solid var(--gray-100);
+        padding-bottom: 1rem;
+
+        h1{
+            margin: 2rem 0 1.5rem 0;
+        }
+
+        span{
+            display: inline-block;
+            font-size: .875rem;
+
+            & + span{//td span q antes dele tem span (pega todos exceto o primeiro)
+                margin-left: 1rem;
+                padding-left: 1rem;
+                position: relative;
+
+                &::before{
+                    content: '';
+                    background-color: #DDD;
+                    border-radius: 2px;
+                    position: absolute;
+                    height: 4px;
+                    width: 4px;
+                    left: 0;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+        }
+    }
+
+    .description{
+        color: var(--gray-800);
+        line-height: 1.675rem;
+        margin-top: 2rem;
+
+        p{
+            margin: 1.5rem 0;
+        }
+    }
+}
